@@ -1,0 +1,237 @@
+body{
+    font-size: 15px;
+}
+
+button{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+    border: 1px white solid;
+    padding: 10px 20px;
+    color: white;
+}
+
+img{
+    max-width: 100%;
+}
+
+/* WRAPPER */
+
+.wrapper{
+    display: grid;
+    grid-gap: 20px;
+}
+
+/* TOP */
+
+.top{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: 
+    'principal principal entrada1'
+    'principal principal entrada2';
+}
+
+.principal{
+    grid-area: principal;
+    min-height: 400px;
+    background: white url(./img/pexels-photo-943096.jpeg);
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.principal >*{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+    padding: 5px;
+}
+
+.entrada{
+    display: grid;
+    justify-content: center;
+    padding: 1rem;
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+}
+
+.entrada p{
+    margin: 0;
+}
+
+.entrada1{
+    grid-area: entrada1;
+}
+
+.entrada2{
+    grid-area: entrada2;
+}
+
+.price{
+    font-size: 60px;
+    font-weight: 300;
+}
+
+/* MENUUUUUUUUUUUUUUUUUUUUUUUUUUU */
+
+.menu ul{
+    display: grid;
+    grid-gap: 10px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.menu a{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+[aria-controls="menu-list"]{
+    display: none;
+}
+
+
+/* FEATURESSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+
+.features{
+    background: rgb(0,0,0,);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.feature{
+    background: rgb(0,0,0,0.2);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature .icon{
+    font-size: 50px;
+}
+
+.feature p{
+    color: white;
+}
+
+.feature h3{
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+}
+
+/* ABOOOOOOOOOOOOOOOOOOOOOOOUT */
+
+.about{
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 9%, rgba(16,11,66,1) 59%, rgba(0,0,0,1) 95%);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-gap: 20px;
+    align-items: center;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3);
+}
+
+.about video{
+    width: 100%;
+}
+
+
+/* GALLERYYYYYYYYYYYYYYYYYYYYYYYYYYYY */
+
+.gallery{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery img{
+    width: 100%;
+}
+
+.gallery h2{
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 20px;
+    color: white;
+    align-items: center;
+}
+
+.gallery h2:before,
+.gallery h2:after{
+    display: block;
+    content: '';
+    height: 10px;
+}
+
+@media(max-width: 1000px){
+    .menu{
+        order:-1;
+        perspective: 800px;
+    }
+
+    [aria-controls="menu-list"]{
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .menu ul{
+        max-height: 0;
+        overflow: hidden;
+        transform: rotateX(90deg);
+        transition: all 0.5s;
+    }
+
+    [aria-expanded="true"] ~ ul{
+        display: grid;
+        max-height: 500px;
+        transform: rotateX(0);
+    }
+
+    [aria-expanded="false"] .close{
+        display: none;
+    }
+
+    [aria-expanded="true"] .close{
+        display: inline-block;
+    }
+
+    [aria-expanded="true"] .open{
+        display: none;
+    }
+}
+
+@media (max-width: 700px){
+    .top{
+        grid-template-areas: 
+        'principal principal'
+        'entrada1 entrada2';
+    }
+    .about{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px){
+    .top{
+        grid-template-areas: 
+        'principal'
+        'entrada1'
+        'entrada2';
+    }
+}
+

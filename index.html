@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Responisve Website!</title>
+</head>
+
+<body> 
+
+    <div class="wrapper">
+        <div class="top">
+            <header class="principal">
+                <h1>NUCBA-CONF</h1>
+                <p>Somos chetosssss.....</p>
+                <p>Chetos maaaaaall....</p>
+            </header>
+            <div class="entrada entrada1">
+                <p>ENTRADA</p>
+                <p class="price">$500</p>
+                <p>VIP + Foto con Facu</p>
+            </div>
+            <div class="entrada entrada2">
+                <p>ENTRADA</p>
+                <p class="price">$200</p>
+                <p>Al fondo y 🍺🍺 con Lucho</p>
+            </div>
+        </div>
+        <nav class="menu">
+            <button aria-expanded="false" aria-controls="menu-list">
+                <span class="open">&#9776;</span>
+                <span class="close">&#9747;</span>
+                Menu
+            </button>
+            <ul id="menu-list">
+                <li>
+                    <a href="">About</a>
+                </li>
+                <li>
+                    <a href="">Speakers</a>
+                </li>
+                <li>
+                    <a href="">Precios</a>
+                </li>
+                <li>
+                    <a href="">Code</a>
+                </li>
+                <li>
+                    <a href="">VIP</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="features">
+            <div class="feature">
+                <span class="icon">🍔</span>
+                <h3>Comida</h3>
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor alias quas modi porro natus rem esse dignissimos sapiente veritatis nesciunt autem repellendus sunt excepturi cupiditate, animi ipsa aliquid. Quas, nemo!
+                </p>
+            </div>
+            <div class="feature">
+                <span class="icon">🍺</span>
+                <h3>Birra</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia modi et molestias tenetur fugit provident exercitationem iste odio eos, accusamus suscipit, natus minima quidem vitae incidunt quasi in alias consequuntur?
+                </p>
+            </div>
+            <div class="feature">
+                <span class="icon">👨‍💻</span>
+                <h3>CODE BABY</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam in mollitia deleniti? Neque, saepe aliquam, illum harum ullam laboriosam, iste praesentium porro minima illo et pariatur voluptatibus nobis labore recusandae?
+                </p>
+            </div>
+            <div class="feature">
+                <span class="icon">🎵</span>
+                <h3>Music all night</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam veniam mollitia obcaecati? Earum quo doloremque iusto commodi necessitatibus repudiandae dicta iure natus nobis ducimus esse molestiae, eligendi, expedita dignissimos ex!
+                </p>
+            </div>
+        </section>
+
+        <section class="about">
+            <video autoplay="autoplay" loop="loop" muted defaultMut playsinline oncontextmenu="return false;"  preload="auto"  id="miVideo">
+                <source src="./y2mate.com-Niño-bailando-meme_360p.webm" type="video/mp4">
+                <source src="./y2mate.com-Niño-bailando-meme_360p.webm" type="video/webm">
+                </video>
+                
+            <div class="about__details">
+                <h2>Vamo' a Codear</h2>
+                <p>Slim Profile, easy to hold and loaded with cheese.</p>
+                <p>This is the one  you have been waiting for</p>
+                <button>Info plissss &#10142;</button>
+            </div>
+        </section>
+
+        <section class="gallery">
+            <h2>Instant Grams</h2>
+            <img src="./img/10022863.jpeg" alt="" />
+            <img src="./img/f19b-d6db-4267-bf1a-0f9a006cd8bf.jpg" alt="" />
+            <img src="./img/3c5e-0b2a-4d74-9d53-ce0d63947c6a.jpg" alt="" />
+            <img src="./img/610a-db27-4861-9597-0bb70bd64949.jpg" alt="" />
+            <img src="./img/7384c3145a166d9503347e8055ba2dca.jpg" alt="" />
+            <img src="./img/9ea9-2372-47f5-bab0-7481d090916c.jpg" alt="" />
+            <img src="./img/Tomorrowland-2017-2-1-300x300.jpg" alt="" />
+            <img src="./img/tomorrowland-ready-300x300.jpg" alt="" />
+            <img src="./img/Tomorrowland_DaveSips-300x300.jpg" alt="" />
+            <img src="./img/unnamed.jpg" alt="" />
+        </section>
+    </div>
+
+    <script>
+        const navButton = document.querySelector('button[aria-expanded]');
+        function toggleNav({target}){
+            const expandir = target.getAttribute ('aria-expanded') === 'true' || false;
+            console.log(typeof expandir);
+        navButton.setAttribute('aria-expanded', !expandir);
+        }
+        navButton.addEventListener('click', toggleNav);
+
+    </script>
+    
+</body>
+</html>
